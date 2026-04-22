@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication1.Pages.Degrees.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Degree</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post" enctype="multipart/form-data" >
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Degree.name" class="control-label"></label>
+                <input asp-for="Degree.name" class="form-control" />
+                <span asp-validation-for="Degree.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Degree.Logotype" class="control-label"></label>
+                @*<input asp-for="Degree.Logotype" class="form-control" />*@
+               @* <span asp-validation-for="Degree.Logotype" class="text-danger"></span>
+                <input asp-for="" 
+                type="file"
+                accept=".png,.jpg,.jpeg"
+                class="form-control"
+                />*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Regressar á listagem</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
